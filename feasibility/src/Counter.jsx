@@ -1,22 +1,22 @@
 import React from "react";
 import "./header.css";
-import { useCount } from "container/store"
+import useStore from "container/store";
 
 function Counter() {
-  const [count, setCount] = useCount();
+  const { count, increment, decrement, clear } = useStore();
 
   return (
     <div className="counter">
       <h1>Feasibility App Counter</h1>
       <span className="">{count}</span>
       <div className="">
-        <button className="" onClick={()=> {setCount(count + 1)}}>
+        <button className="" onClick={increment}>
           +
         </button>
-        <button className="" onClick={()=> {setCount(count - 1)}}>
+        <button className="" onClick={decrement}>
           -
         </button>
-        <button className="" onClick={()=> {setCount(0)}}>
+        <button className="" onClick={clear}>
           Reset
         </button>
       </div>

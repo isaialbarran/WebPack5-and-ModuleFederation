@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from "./Home";
 
-import { useCount } from "container/store";
+import useStore from "container/store";
 
 import "./index.css";
 
@@ -10,11 +10,11 @@ const Feasibility = React.lazy(() => import("feasibility/Counter"));
 const Activation = React.lazy(() => import("activation/Box"));
 
 const App = () => {
-  const [count, setCount] = useCount();
+  const { count, increment } = useStore();
   return (
     <BrowserRouter>
       <div>Count: {count}</div>
-      <button onClick={() => setCount(count + 1)}>Add</button>
+      <button onClick={increment}>Add</button>
       <div className="mt-10 text-3xl mx-auto max-w-6xl">
         <div className="my-10">
           <div className="list">
