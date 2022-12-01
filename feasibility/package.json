@@ -2,7 +2,6 @@
   "name": "feasibility",
   "version": "1.0.0",
   "scripts": {
-    "webpack": "webpack serve",
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=8081 npx serve",
