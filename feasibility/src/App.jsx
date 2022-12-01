@@ -4,10 +4,10 @@ import { CountProvider } from "container/store";
 
 
 function App() {
-  return 
+  return (
   <CountProvider>
-    <Counter />;
-  </CountProvider>
+    <Counter />
+  </CountProvider>)
 }
 
 export default App;
