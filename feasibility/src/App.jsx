@@ -1,8 +1,13 @@
 import React from "react";
 import Counter from "./Counter";
+import { CountProvider } from "container/store";
+
 
 function App() {
-  return <Counter />;
+  return (
+  <CountProvider>
+    <Counter />
+  </CountProvider>)
 }
 
 export default App;

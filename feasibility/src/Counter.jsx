@@ -1,36 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import "./header.css";
+import { useCount } from "container/store"
 
 function Counter() {
-  const [counter, setCounter] = useState(0);
-
-  //increase counter
-  const increase = () => {
-    setCounter((count) => count + 1);
-  };
-
-  //decrease counter
-  const decrease = () => {
-    setCounter((count) => count - 1);
-  };
-
-  //reset counter
-  const reset = () => {
-    setCounter(0);
-  };
+  const [count, setCount] = useCount();
 
   return (
     <div className="counter">
       <h1>Feasibility App Counter</h1>
-      <span className="">{counter}</span>
+      <span className="">{count}</span>
       <div className="">
-        <button className="" onClick={increase}>
+        <button className="" onClick={()=> {setCount(count + 1)}}>
           +
         </button>
-        <button className="" onClick={decrease}>
+        <button className="" onClick={()=> {setCount(count - 1)}}>
           -
         </button>
-        <button className="" onClick={reset}>
+        <button className="" onClick={()=> {setCount(0)}}>
           Reset
         </button>
       </div>

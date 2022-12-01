@@ -43,7 +43,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "feasibility",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        container:"container@http://localhost:8080/remoteEntry.js"
+      },
       exposes: {
         "./Counter": './src/Counter.jsx'
       },
