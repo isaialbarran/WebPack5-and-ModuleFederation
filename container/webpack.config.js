@@ -44,10 +44,13 @@ module.exports = {
       name: "container",
       filename: "remoteEntry.js",
       remotes: {
+        container:"container@http://localhost:8080/remoteEntry.js",
         feasibility: "feasibility@http://localhost:8081/remoteEntry.js",
         activation: "activation@http://localhost:8082/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./store": "./src/store"
+      },
       shared: {
         ...deps,
         react: {
