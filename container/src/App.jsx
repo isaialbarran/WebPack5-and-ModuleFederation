@@ -13,8 +13,8 @@ const App = () => {
   const { count, increment } = useStore();
   return (
     <BrowserRouter>
-      <div>Count: {count}</div>
-      <button onClick={increment}>Add</button>
+      <h1>Count: {count}</h1>
+      <button onClick={increment} className="btn-main">Add</button>
       <div className="mt-10 text-3xl mx-auto max-w-6xl">
         <div className="my-10">
           <div className="list">

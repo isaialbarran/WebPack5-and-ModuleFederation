@@ -43,7 +43,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "activation",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        container:"container@http://localhost:8080/remoteEntry.js"
+      },
       exposes: {
         "./Box":"./src/Box.jsx"
       },
