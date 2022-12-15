@@ -44,7 +44,6 @@ module.exports = {
       name: "feasibility",
       filename: "remoteEntry.js",
       remotes: {
-        container:"container@http://localhost:8080/remoteEntry.js"
       },
       exposes: {
         "./Counter": './src/Counter.jsx'

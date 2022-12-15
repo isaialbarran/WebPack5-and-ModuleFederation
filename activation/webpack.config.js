@@ -44,7 +44,6 @@ module.exports = {
       name: "activation",
       filename: "remoteEntry.js",
       remotes: {
-        container:"container@http://localhost:8080/remoteEntry.js"
       },
       exposes: {
         "./Box":"./src/Box.jsx"
