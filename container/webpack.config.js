@@ -49,7 +49,7 @@ module.exports = {
         activation: "activation@http://localhost:8082/remoteEntry.js",
       },
       exposes: {
-        "./store": "./src/store"
+        "./stateManager": "./src/StateManager"
       },
       shared: {
         ...deps,

@@ -1,8 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from "./Home";
-
-import useStore from "container/store";
+import StateManager from "./StateManager";
 
 import "./index.css";
 
@@ -10,7 +9,10 @@ const Feasibility = React.lazy(() => import("feasibility/Counter"));
 const Activation = React.lazy(() => import("activation/Box"));
 
 const App = () => {
-  const { count, increment } = useStore();
+
+  const stateManager = new StateManager()
+  const { count, increment, decrement, clear } = stateManager.getStore();
+
   return (
     <BrowserRouter>
       <h1>Count: {count}</h1>
@@ -36,7 +38,7 @@ const App = () => {
               path="/feasibility"
               element={
                 <Suspense fallback={"loading..."}>
-                  <Feasibility />
+                  <Feasibility count={count} increment={increment} decrement={decrement} clear={clear} />
                 </Suspense>
               }
             />
@@ -44,7 +46,7 @@ const App = () => {
               path="/activation"
               element={
                 <Suspense fallback={"loading..."}>
-                  <Activation />
+                  <Activation count={count} increment={increment} decrement={decrement} clear={clear} />
                 </Suspense>
               }
             />
